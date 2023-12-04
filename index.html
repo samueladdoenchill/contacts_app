@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Contacts</h1>
+
+        <!-- Display contacts on the homepage -->
+        <div id="contacts-container">
+            <!-- Contacts will be displayed here -->
+        </div>
+
+        <!-- Add Contact Button to navigate to the add contact form -->
+        <button onclick="showAddContactForm()">Add Contact</button>
+
+        <!-- Form for displaying and editing contact information -->
+        <div id="form-container" style="display: none;">
+            <form id="contact-form">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" placeholder="First Name" required>
+            
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+            
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email Address" required>
+            
+                <button type="button" id="saveButton" onclick="saveContact()">Save</button>
+                <button type="button" id="deleteButton" onclick="deleteContact()">Delete</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
