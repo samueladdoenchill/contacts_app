@@ -17,15 +17,16 @@ body {
 
 h1, h2 {
     text-align: center;
-    color:#0069cc;
+    color: #0069cc;
 }
 
 #form-container {
     margin-top: 40px;
+    max-width: 380px;
 }
 
 #contacts-container {
-    text-align: center; /* Center-align the contacts */
+    text-align: center;
 }
 
 label {
@@ -40,45 +41,31 @@ input {
 }
 
 #form-buttons {
-    text-align: right;
+    text-align: center;
     margin-bottom: 10px;
+    display: flex;
+
 }
 
 #form-buttons button {
-    background-color: #a04caf;
+    background-color: #0084ff;
+    min-width: 180px;
     color: #fff;
     padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 10px;
-    display: inline-block; /* Make buttons display inline-block */
+    margin: 10px;
+    display: inline-block;
 }
 
 #form-buttons button:hover {
-    background-color: #45a049;
+    background-color: #00becc;
 }
 
-
+#AddButton,
 #deleteButton {
-    background-color: #0084ff; /* Set background color to red */
-    color: #fff;
-    width: 100px;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#deleteButton:hover {
-    background-color: #00becc; /* Change background color on hover */
-}
-
-#AddButton {
-    background-color: #0084ff; /* Set background color to red */
+    background-color: #0084ff;
     color: #fff;
     min-width: 300px;
     padding: 10px;
@@ -90,27 +77,8 @@ input {
     text-align: center;
 }
 
-#AddButton:hover {
-    background-color: #00becc; /* Change background color on hover */
-}
 
+#AddButton:hover,
 #deleteButton:hover {
-    background-color: #00becc; /* Change background color on hover */
-}
-
-#saveButton {
-    background-color: #0084ff; /* Set background color to red */
-    color: #fff;
-    min-width: 300px;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#saveButton:hover {
-    background-color: #00becc; /* Change background color on hover */
+    background-color: #00becc;
 }

@@ -20,11 +20,9 @@ function renderContacts() {
         nameParagraph.setAttribute('data-email', contact.email);
 
         contactDiv.appendChild(nameParagraph);
-
         contactsContainer.appendChild(contactDiv);
     });
 }
-
 
 function showAddContactForm() {
     // Reset selectedContactIndex to null to indicate a new contact
@@ -45,11 +43,17 @@ function showContactForm(index) {
 
 function showFormContainer() {
     // Display the form container and hide the contacts container
-    document.getElementById('contacts-container').style.display = 'none';
-    document.getElementById('form-container').style.display = 'block';
-    document.getElementById('saveButton').textContent = selectedContactIndex !== null ? 'Save' : 'Edit';
-    document.getElementById('deleteButton').style.display = selectedContactIndex !== null ? 'inline-block' : 'none';
-    document.getElementById('AddButton').style.display = 'none';
+    const contactsContainer = document.getElementById('contacts-container');
+    const formContainer = document.getElementById('form-container');
+    const saveButton = document.getElementById('saveButton');
+    const deleteButton = document.getElementById('deleteButton');
+    const addButton = document.getElementById('AddButton');
+
+    contactsContainer.style.display = 'none';
+    formContainer.style.display = 'block';
+    saveButton.textContent = selectedContactIndex !== null ? 'Edit' : 'Save';
+    deleteButton.style.display = selectedContactIndex !== null ? 'inline-block' : 'none';
+    addButton.style.display = 'none';
 }
 
 function cancelEdit() {
@@ -58,7 +62,6 @@ function cancelEdit() {
     showContactsContainer();
 }
 
-
 function clearForm() {
     // Clear the form fields
     document.getElementById('firstName').value = '';
@@ -66,7 +69,6 @@ function clearForm() {
     document.getElementById('phone').value = '';
     document.getElementById('email').value = '';
 }
-
 
 function saveContact() {
     const firstNameInput = document.getElementById('firstName');
@@ -91,10 +93,7 @@ function saveContact() {
         }
 
         // Reset the form and display the contacts
-        firstNameInput.value = '';
-        lastNameInput.value = '';
-        phoneInput.value = '';
-        emailInput.value = '';
+        clearForm();
         renderContacts();
         showContactsContainer();
     }
@@ -111,9 +110,13 @@ function deleteContact() {
 
 function showContactsContainer() {
     // Display the contacts container and hide the form container
-    document.getElementById('contacts-container').style.display = 'block';
-    document.getElementById('form-container').style.display = 'none';
-    document.getElementById('AddButton').style.display = 'block';
+    const contactsContainer = document.getElementById('contacts-container');
+    const formContainer = document.getElementById('form-container');
+    const addButton = document.getElementById('AddButton');
+
+    contactsContainer.style.display = 'block';
+    formContainer.style.display = 'none';
+    addButton.style.display = 'block';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
