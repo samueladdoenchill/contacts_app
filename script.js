@@ -47,9 +47,26 @@ function showFormContainer() {
     // Display the form container and hide the contacts container
     document.getElementById('contacts-container').style.display = 'none';
     document.getElementById('form-container').style.display = 'block';
-    document.getElementById('saveButton').textContent = selectedContactIndex !== null ? 'Save' : 'Add';
+    document.getElementById('saveButton').textContent = selectedContactIndex !== null ? 'Save' : 'Edit';
     document.getElementById('deleteButton').style.display = selectedContactIndex !== null ? 'inline-block' : 'none';
+    document.getElementById('AddButton').style.display = 'none';
 }
+
+function cancelEdit() {
+    // Clear the form and show the contacts container
+    clearForm();
+    showContactsContainer();
+}
+
+
+function clearForm() {
+    // Clear the form fields
+    document.getElementById('firstName').value = '';
+    document.getElementById('lastName').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('email').value = '';
+}
+
 
 function saveContact() {
     const firstNameInput = document.getElementById('firstName');
@@ -96,6 +113,7 @@ function showContactsContainer() {
     // Display the contacts container and hide the form container
     document.getElementById('contacts-container').style.display = 'block';
     document.getElementById('form-container').style.display = 'none';
+    document.getElementById('AddButton').style.display = 'block';
 }
 
 document.addEventListener('DOMContentLoaded', () => {

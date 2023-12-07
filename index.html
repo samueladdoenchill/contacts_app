@@ -16,10 +16,16 @@
         </div>
 
         <!-- Add Contact Button to navigate to the add contact form -->
-        <button onclick="showAddContactForm()">Add Contact</button>
+        <button type="button" id="AddButton" onclick="showAddContactForm()">Add Contact</button>
 
         <!-- Form for displaying and editing contact information -->
         <div id="form-container" style="display: none;">
+            <!-- Buttons for Cancel and Edit -->
+            <div id="form-buttons">
+                <button type="button" id="cancelButton" onclick="cancelEdit()">Cancel</button>
+                <button type="button" id="editButton" onclick="saveContact()">Edit</button>
+            </div>
+
             <form id="contact-form">
                 <label for="firstName">First Name:</label>
                 <input type="text" id="firstName" placeholder="First Name" required>
@@ -37,6 +43,7 @@
                 <button type="button" id="deleteButton" onclick="deleteContact()">Delete</button>
             </form>
         </div>
+
     </div>
     <script src="script.js"></script>
 </body>
